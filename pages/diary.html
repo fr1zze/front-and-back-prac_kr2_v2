@@ -4,166 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дневник</title>
+    <title>Контакты</title>
     <link rel="stylesheet" href="../styles/styles.css">
-    <style>
-        dialog::backdrop {
-            background: rgba(0, 0, 0, 0.6);
-            animation: fadeIn 0.3s ease;
-        }
-
-        dialog {
-            border: none;
-            border-radius: 12px;
-            padding: 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            animation: slideIn 0.3s ease;
-            max-width: auto;
-            width: 30vw;
-            max-height: 600px;
-            overflow-y: auto;
-        }
-
-        .modal-header {
-            background: linear-gradient(135deg, #000000 0%, #000000 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 12px 12px 0 0;
-            margin: 0;
-        }
-
-        .modal-header h2 {
-            margin: 0;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .modal-content {
-            padding: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid #e9ecef;
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-            box-sizing: border-box;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: flex-end;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 0.75rem 1.5rem;
-            margin: 5px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #6e04f8 0%, #010507 100%);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-secondary {
-            background: #f8f9fa;
-            color: #2c3e50;
-            border: 2px solid #e9ecef;
-        }
-
-        .btn-secondary:hover {
-            background: #e9ecef;
-        }
-
-        .required {
-            color: #e74c3c;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px) scale(0.9);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        @media (max-width: 600px) {
-            dialog {
-                margin: 1rem;
-                width: calc(100vw - 2rem);
-            }
-
-            .modal-actions {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-list {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
-
 </head>
 
 <body>
@@ -175,7 +17,7 @@
         </header>
         <nav class="nav">
             <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="../index_2.html">Главная</a></li>
                 <li class="nav-item"><a class="nav-link" href="projects.html">Проекты</a></li>
                 <li class="nav-item"><a class="nav-link" href="diary.html">Дневник</a></li>
                 <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
@@ -183,139 +25,100 @@
         </nav>
 
         <main class="content">
-            <h1>Мой учебный прогресс</h1>
-            <div class="diary-entries diary-header" id="diaryEntries"></div>
-            <h1>Текущие курсы</h1>
-            <section class="skills-section">
-                <div class="skills-list">
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Веб-разработка</span>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">JavaScript</span>
-                            <span class="skill-percent">70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">React</span>
-                            <span class="skill-percent">50%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 50%"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <button type="button" class="btn btn-primary" onclick="contactModal.showModal()">Добавить запись</button>
+            <h1>Свяжитесь со мной</h1>
+            <article class="contacts-header">
+                <form id="ContactForm">
+                    <label for="username">Имя:</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email" required>
+
+                    <label for="message">Сообщение:</label>
+                    <textarea name="message" id="message" rows="6" required></textarea>
+
+                    <button type="submit" id="submit" name="submit">Отправить</button>
+
+                    <button type="reset" id="reset" name="reset">Очистить</button>
+
+                </form>
+            </article>
+
+            <h2>Контакты:</h2>
+            <p>
+                📧 shlapakov.m.g@edu.mirea.ru  
+            </p>
+            <p>
+                📱 GitHub: fr1zze
+            </p>
+            <p>
+                📍 Москва, Россия
+            </p>
+
         </main>
         <footer>
             <p>© 2025 Контакты</p>
         </footer>
-        <dialog id="contactModal">
-            <div class="modal-header">
-                <h2>Новая запись</h2>
-            </div>
-
-            <div class="modal-content">
-                <form id="feedbackForm" method="dialog">
-                    <div class="form-group">
-                        <label for="date">Дата<span class="required">*</span></label>
-                        <input type="date" id="date" name="date" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="task">Задача<span class="required">*</span></label>
-                        <input type="task" id="task" name="task" required placeholder="Вайб кодинг">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="status">Статус<span class="required">*</span></label>
-                        <select id="status" name="status" required>
-                            <option value="">Выберите статус</option>
-                            <option value="complete">✓</option>
-                            <option value="inProgress">⏳</option>
-                        </select>
-                    </div>
-
-                    <div class="modal-actions">
-                        <button type="button" class="btn btn-secondary" onclick="contactModal.close()">Закрыть</button>
-                        <button type="submit" class="btn btn-primary">Добавить</button>
-                    </div>
-                </form>
-            </div>
-        </dialog>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const form = document.getElementById("feedbackForm");
-            const diaryEntries = document.getElementById("diaryEntries");
-            const modal = document.getElementById("contactModal");
+        const form = document.getElementById('ContactForm'); 
+        const emailInput = document.getElementById('email');  
+        const usernameInput = document.getElementById('username');
 
-            form.removeAttribute("method");
+        emailInput.addEventListener('input', validateEmail); 
+        usernameInput.addEventListener('input', validateUsername);
 
-            form.addEventListener("submit", (e) => {
-                e.preventDefault();
+        function validateUsername() {
+            const usernameRegex = /[A-Яа-я]/;
+            if (usernameRegex.test(usernameInput.value)) {
+                removeError(usernameInput);
+                return true;
+            }
+            else {
+                showError(usernameInput, "Username не соответствует формату. Пример: Иван");
+                return false;
+            }
 
-                const date = document.getElementById("date").value;
-                const task = document.getElementById("task").value;
-                const status = document.getElementById("status").value;
+        }
 
-                if (!date || !task || !status) {
-                    alert("Пожалуйста, заполните все поля!");
-                    return;
-                }
+        function validateEmail() { 
 
-                const entry = document.createElement("div");
-                entry.classList.add("diary-entry");
-                entry.style.border = "1px solid #e9ecef";
-                entry.style.borderRadius = "10px";
-                entry.style.padding = "15px";
-                entry.style.marginBottom = "10px";
-                entry.style.background = "#f8f9fa";
+            const emailRegex = /[A-Za-z0-9_\-\.]{2,10}@[a-z0-9\.\-_]{1,10}\.[a-z]{2,3}/;
+            if (emailRegex.test(emailInput.value)) {
+                removeError(emailInput);
+                return true;
+            }
+            else {
+                showError(emailInput, "Email не соответствует формату. Пример: ivanov@mail.ru");
+                return false;
+            }
 
-                entry.innerHTML = `
-            <p><strong>Дата:</strong> ${date}</p>
-            <p><strong>Задача:</strong> ${task}</p>
-            <p><strong>Статус:</strong> ${status === "complete" ? "✓ Выполнено" : "⏳ В процессе"
-                    }</p>
-        `;
+        }
 
-                diaryEntries.prepend(entry);
+        function showError(input, message) {
 
-                form.reset();
-                modal.close();
-            });
+            const formControl = input.parentElement; 
+            const errorElement = formControl.querySelector('.error') || document.createElement('div');
 
-            const handleResize = () => {
-                const dialog = modal;
-                if (window.innerWidth <= 600) {
-                    dialog.style.width = "90vw";
-                    dialog.style.maxHeight = "80vh";
-                    dialog.style.borderRadius = "10px";
-                    dialog.style.margin = "1rem";
-                } else if (window.innerWidth <= 900) {
-                    dialog.style.width = "60vw";
-                    dialog.style.maxHeight = "80vh";
-                } else {
-                    dialog.style.width = "30vw";
-                    dialog.style.maxHeight = "600px";
-                }
-            };
+            errorElement.className = 'error';
+            errorElement.textContent = message;
 
-            handleResize();
-            window.addEventListener("resize", handleResize);
-        });
+            formControl.appendChild(errorElement);
+            input.style.borderColor = 'red';
+
+        }
+
+        function removeError(input) {
+
+            const formControl = input.parentElement;
+            const errorElement = formControl.querySelector('.error');
+
+            if (errorElement) {
+                formControl.removeChild(errorElement);
+            }
+
+            input.style.borderColor = 'green';
+        }
     </script>
 </body>
 
